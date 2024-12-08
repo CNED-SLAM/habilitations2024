@@ -42,13 +42,7 @@ namespace habilitations2024.dal
                     List<Object[]> records = access.Manager.ReqSelect(req);
                     if (records != null)
                     {
-                        foreach (Object[] record in records)
-                        {
-                            Profil profil = new Profil((int)record[5], (string)record[6]);
-                            Developpeur developpeur = new Developpeur((int)record[0], (string)record[1], (string)record[2],
-                                (string)record[3], (string)record[4], profil);
-                            lesDeveloppeurs.Add(developpeur);
-                        }
+                        lesDeveloppeurs = records.ConvertAll(new Converter<object[], Developpeur>(ConvertDeveloppeur));
                     }
                 }
                 catch (Exception e)
@@ -128,7 +122,7 @@ namespace habilitations2024.dal
                 parameters.Add("@prenom", developpeur.Prenom);
                 parameters.Add("@tel", developpeur.Tel);
                 parameters.Add("@mail", developpeur.Mail);
-                parameters.Add("@idprofil", developpeur.Profil.Idprofil);
+                parameters.Add("idprofil", developpeur.Profil.Idprofil);
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -164,6 +158,18 @@ namespace habilitations2024.dal
                     Environment.Exit(0);
                 }
             }
+        }
+
+        /// <summary>
+        /// Utilise les valeurs d'un tableau pour créer un objet de type Developpeur
+        /// </summary>
+        /// <param name="developpeur">tableau d'objets contenant les valeurs des champs du développeur</param>
+        /// <returns>objet de type Developpeur</returns>
+        private Developpeur ConvertDeveloppeur(Object[] developpeur)
+        {
+            Profil profil = new Profil((int)developpeur[5], (string)developpeur[6]);
+            return new Developpeur((int)developpeur[0], (string)developpeur[1], (string)developpeur[2],
+                (string)developpeur[3], (string)developpeur[4], profil);
         }
 
     }
