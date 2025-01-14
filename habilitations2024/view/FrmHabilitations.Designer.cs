@@ -1,6 +1,6 @@
-﻿namespace habilitations2024
+﻿namespace habilitations2024.view
 {
-    partial class Form1
+    partial class FrmHabilitations
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
