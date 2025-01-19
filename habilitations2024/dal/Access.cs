@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace habilitations2024.dal
 {
@@ -15,7 +16,7 @@ namespace habilitations2024.dal
         /// <summary>
         /// chaine de connexion à la bdd
         /// </summary>
-        private static readonly string connectionString = "server=localhost;user id=habilitations;password=motdepasseuser;database=habilitations;";
+        private static readonly string connectionString = "server=localhost;user id=habilitations;password=motdepasseuser;database=habilitations;SslMode=none";
         /// <summary>
         /// instance unique de la classe
         /// </summary>
@@ -33,10 +34,16 @@ namespace habilitations2024.dal
         {
             try
             {
+                Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Verbose()
+                    .WriteTo.Console()
+                    .WriteTo.File("logs/log.txt")
+                    .CreateLogger();
                 Manager = BddManager.GetInstance(connectionString);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Fatal("Access.Access catch connectionString={0} erreur={1}", connectionString, e.Message);
                 Environment.Exit(0);
             }
         }

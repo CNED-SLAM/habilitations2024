@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace habilitations2024.dal
 {
@@ -40,8 +41,10 @@ namespace habilitations2024.dal
                     List<Object[]> records = access.Manager.ReqSelect(req);
                     if (records != null)
                     {
+                        Log.Debug("ProfilAccess.GesLesProfils nb records = {0}", records.Count);
                         foreach (Object[] record in records)
                         {
+                            Log.Debug("ProfilAccess.GestLesProfils id={0} nom={1}", record[0], record[1]);
                             Profil profil = new Profil((int)record[0], (string)record[1]);
                             lesProfils.Add(profil);
                         }
@@ -50,6 +53,7 @@ namespace habilitations2024.dal
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    Log.Error("ProfilAccess.GetLesProfils catch req={0} erreur={1}", req, e.Message);
                     Environment.Exit(0);
                 }
             }

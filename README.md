@@ -56,10 +56,11 @@ Voici le nouveau diagramme de paquetage, avec en plus, la classe Admin dans mode
 ![3-diagramme_de_paquetages_S4](https://github.com/CNED-SLAM/Habilitations/assets/100127886/9b086d26-df1a-488c-9c78-d7caa0464ca5)
 
 ### Commit "Phase 4 : Installeur"
-Création d'un installeur pour l'application, avec le mode opératoire suivant :<br>
-<a href="https://github.com/CNED-SLAM/habilitations2024/wiki/Cr%C3%A9er-un-installeur-pour-une-application-C%23-sous-Visual-Studio-2022">https://github.com/CNED-SLAM/habilitations2024/wiki/Cr%C3%A9er-un-installeur-pour-une-application-C%23-sous-Visual-Studio-2022</a>
+Création d'un installeur pour l'application.
 ### Commit "Phase 5 : Contrôle du pwd"
 Vérification du format du pwd (entre 8 et 30caractères, contenant au moins une minuscule, une majuscule, un chiffre, un caractère spécial et pas d'espace.
+### Commit "Phase 6 : Gestion des logs"
+Journalisation avec Serilog dans les classes du paquetage dal (accès aux données).
 
 ## Installation
 Il est possible de tester l'application étape par étape (commit par commit) dans le cadre de la création d'un TP, ou de tester directement la version finale.<br>
