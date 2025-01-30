@@ -97,17 +97,26 @@ namespace habilitations2024.controller
         {
             if (pwd.Length < 8 && pwd.Length > 30)
                 return false;
-            if (!Regex.Match(pwd, @"[a-z]").Success)
+            // Définir un timeout raisonnable
+            TimeSpan timeout = TimeSpan.FromMilliseconds(100);
+            // description en une fois des règles à respecter :
+            // \p{Ll} → Correspond aux lettres minuscules Unicode, y compris les caractères accentués (é, ô, à...).
+            // \p{Lu} → Correspond aux lettres majuscules Unicode, y compris les caractères accentués (É, Ô, À...).
+            // \d → Correspond à un chiffre Unicode.
+            // \W → Correspond à un caractère non alphanumérique Unicode.
+            // _ → Correspond au caractère souligné (_).
+            // (?!.*\s) → Ne doit pas contenir d'espace.
+            // {8,30} → Longueur entre 8 et 30 caractères.
+            string pattern = @"^(?=.*[\p{Ll}])(?=.*[\p{Lu}])(?=.*\d)(?=.*[\W_])(?!.*\s).{8,30}$";
+            try
+            {
+                return Regex.IsMatch(pwd, pattern, RegexOptions.None, timeout);
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                // Échec si l'évaluation prend trop de temps
                 return false;
-            if (!Regex.Match(pwd, @"[A-Z]").Success)
-                return false;
-            if (!Regex.Match(pwd, @"[0-9]").Success)
-                return false;
-            if (!Regex.Match(pwd, @"\W").Success)
-                return false;
-            if (Regex.Match(pwd, @"\s").Success)
-                return false;
-            return true;
+            }
         }
 
     }

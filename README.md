@@ -58,9 +58,14 @@ Voici le nouveau diagramme de paquetage, avec en plus, la classe Admin dans mode
 ### Commit "Phase 4 : Installeur"
 Création d'un installeur pour l'application.
 ### Commit "Phase 5 : Contrôle du pwd"
-Vérification du format du pwd (entre 8 et 30caractères, contenant au moins une minuscule, une majuscule, un chiffre, un caractère spécial et pas d'espace.
+Vérification du format du pwd (entre 8 et 30 caractères, contenant au moins une minuscule, une majuscule, un chiffre, un caractère spécial et pas d'espace.
+La méthode PwdFort contient des erreurs volontaires car il est demandé aux étudiants de consulte l'issue mentionnant les problèmes rencontrés et de faire des propositions de pull request.
 ### Commit "Phase 6 : Gestion des logs"
 Journalisation avec Serilog dans les classes du paquetage dal (accès aux données).
+Attention, les erreurs dans la méthode PwdFort ajoutées dans le commit précédent, ne sont pas encore corrigées. Elles le seront dans le commit suivant.
+### Commit "Phase 7 : qualité de code (SonarQube), transfert chaine de connexion dans App.config."
+Code corrigé et optimisé avec les alertes de Sonarlint en local et les signalements sur le serveur SonarQube (en particulier au niveau sécurité, d'où le transfert de la chaîne de connexion dans le fichier App.config).
+Suite aux optimisations de la méthode PwdFort, celle-ci a été aussi corrigée (elle contenait des erreurs volontaires dans le commit "Phase 5 : Contrôle du pwd" et il était attendu des propositions de correction par pull request).
 
 ## Installation
 Il est possible de tester l'application étape par étape (commit par commit) dans le cadre de la création d'un TP, ou de tester directement la version finale.<br>

@@ -1,0 +1,1 @@
+G:\_important\test\testVisualStudio2022\habilitations2024\.sonarqube\out\0
