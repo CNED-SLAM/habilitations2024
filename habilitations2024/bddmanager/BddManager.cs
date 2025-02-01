@@ -43,7 +43,17 @@ namespace habilitations2024.bddmanager
         }
 
         /// <summary>
-        /// Exécution d'une requête autre que "select"
+        /// Exécution d'une requête de type LCT (begin transaction, commit, rollback)
+        /// </summary>
+        /// <param name="stringQuery">requête</param>
+        public void ReqControle(string stringQuery)
+        {
+            MySqlCommand command = new MySqlCommand(stringQuery, connection);
+            command.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Exécution d'une requête de type LMD (insert, update, delete)
         /// </summary>
         /// <param name="stringQuery">requête autre que select</param>
         /// <param name="parameters">dictionnire contenant les parametres</param>
@@ -62,7 +72,7 @@ namespace habilitations2024.bddmanager
         }
 
         /// <summary>
-        /// Execution d'une requête de type "select"
+        /// Execution d'une requête de type LIT (select)
         /// </summary>
         /// <param name="stringQuery">requête select</param>
         /// <param name="parameters">dictoinnaire contenant les parametres</param>
