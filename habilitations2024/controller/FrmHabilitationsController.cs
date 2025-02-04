@@ -87,6 +87,23 @@ namespace habilitations2024.controller
         }
 
         /// <summary>
+        /// Demande de suppression d'un profil
+        /// </summary>
+        /// <param name="profil">objet profil à supprimer</param>
+        public void DelProfil(Profil profil)
+        {
+            profilAccess.DelProfil(profil);
+        }
+        /// <summary>
+        /// Demande d'ajout d'un profil 
+        /// </summary>
+        /// <param name="profil"></param>
+        public void AddProfil(Profil profil)
+        {
+            profilAccess.AddProfil(profil);
+        }
+
+        /// <summary>
         /// Conrtôle si le pwd respecte les règles :
         /// au moins une minuscule, une majuscule, un chiffre, un caractère spécial, pas d'espace
         /// et longueur entre 8 et 30 caractères

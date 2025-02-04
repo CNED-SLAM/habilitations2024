@@ -68,6 +68,8 @@ Code corrigé et optimisé avec les alertes de Sonarlint en local et les signale
 Suite aux optimisations de la méthode PwdFort, celle-ci a été aussi corrigée (elle contenait des erreurs volontaires dans le commit "Phase 5 : Contrôle du pwd" et il était attendu des propositions de correction par pull request).
 ### Commit "Phase 8 : tests sur classes des packages model et dal (avec accès à la BDD)"
 Tests unitaires sur les classes du package 'model'. Tests d'intégration sur les classes du package 'dal' qui accèdent à la BDD.
+### Commit "Phase 9 : ajout de fonctionnalités avec 'tests firsts'"
+Ecriture des tests unitaires avant l'écriture des méthodes correspondantes à tester.
 
 ## Installation
 Il est possible de tester l'application étape par étape (commit par commit) dans le cadre de la création d'un TP, ou de tester directement la version finale.<br>
