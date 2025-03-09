@@ -141,7 +141,7 @@ namespace habilitations2024.dal
                     { "@prenom", developpeur.Prenom },
                     { "@tel", developpeur.Tel },
                     { "@mail", developpeur.Mail },
-                    { "@pwd", developpeur.Nom },
+                    { "@pwd", developpeur.Pwd },
                     { "@idprofil", developpeur.Profil.Idprofil }
                 };
                 try
@@ -168,7 +168,7 @@ namespace habilitations2024.dal
                 string req = "update developpeur set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idprofil = @idprofil ";
                 req += "where iddeveloppeur = @iddeveloppeur;";
                 Dictionary<string, object> parameters = new Dictionary<string, object> {
-                    { "@idDeveloppeur", developpeur.Iddeveloppeur },
+                    { "@iddeveloppeur", developpeur.Iddeveloppeur },
                     { "@nom", developpeur.Nom },
                     { "@prenom", developpeur.Prenom },
                     { "@tel", developpeur.Tel },
@@ -199,7 +199,7 @@ namespace habilitations2024.dal
                 string req = "update developpeur set pwd = SHA2(@pwd, 256) ";
                 req += "where iddeveloppeur = @iddeveloppeur;";
                 Dictionary<string, object> parameters = new Dictionary<string, object> {
-                    { "@idDeveloppeur", developpeur.Iddeveloppeur },
+                    { "@iddeveloppeur", developpeur.Iddeveloppeur },
                     { "@pwd", developpeur.Pwd }
                 };
                 try

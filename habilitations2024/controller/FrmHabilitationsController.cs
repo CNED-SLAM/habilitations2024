@@ -110,9 +110,9 @@ namespace habilitations2024.controller
         /// </summary>
         /// <param name="pwd"></param>
         /// <returns></returns>
-        public bool PwdFort(string pwd)
+        public static bool PwdFort(string pwd)
         {
-            if (pwd.Length < 8 && pwd.Length > 30)
+            if (pwd.Length < 8 || pwd.Length > 30)
                 return false;
             // Définir un timeout raisonnable
             TimeSpan timeout = TimeSpan.FromMilliseconds(100);

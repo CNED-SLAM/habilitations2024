@@ -206,7 +206,7 @@ namespace habilitations2024.view
         {
             if (!txtPwd1.Text.Equals("") && !txtPwd2.Text.Equals("") && txtPwd1.Text.Equals(txtPwd2.Text))
             {
-                if (controller.PwdFort(txtPwd1.Text))
+                if (FrmHabilitationsController.PwdFort(txtPwd1.Text))
                 {
                     Developpeur developpeur = (Developpeur)bdgDeveloppeurs.List[bdgDeveloppeurs.Position];
                     developpeur.Pwd = txtPwd1.Text;
