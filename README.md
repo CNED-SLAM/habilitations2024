@@ -18,15 +18,15 @@ La liste des profils est fixe et non modifiable via cette application.<br>
 
 ### Structure de la BDD
 Voici le schéma conceptuel de données présentant la structure de la BDD qui est au format MySQL :<br>
-![0-MCD_habilitations](https://github.com/CNED-SLAM/Habilitations/assets/100127886/0715f730-003e-422b-92d9-a04f6071802a)
+![img1](https://github.com/user-attachments/assets/5551da58-87cb-4e03-b93f-7218fdeb2459)
 
 ### Interface
 Voici à quoi doit ressembler la fenêtre de l'application :<br>
-![1-Ecran](https://github.com/CNED-SLAM/Habilitations/assets/100127886/4aa72f04-1b49-40b2-a0c4-502cdb0f4995)
+![img2](https://github.com/user-attachments/assets/3c9e7e9f-2f14-422d-8c58-330053bb1c3e)
 
 ### Diagramme de paquetage
 L'application est structurée dans le respect du pattern MVC.<br>
-![2-diagramme_de_paquetages_S2](https://github.com/CNED-SLAM/Habilitations/assets/100127886/c1b7ebf5-9b0e-4f60-8e12-494695d028f6)
+![img3](https://github.com/user-attachments/assets/df25bee0-14c9-4364-be31-65700622a9cd)
 
 #### Explications sur les couches supplémentaires
 L'application contient 2 paquetages supplémentaires par rapport au MVC classique :<br>
@@ -53,7 +53,7 @@ Toutes les fonctionnalités sont codées.
 ### Commit "Phase 3 : Authentification"
 Ajout d'une fenêtre d'authentification pour limiter l'accès aux développeurs ayant le profil 'admin'.<br>
 Voici le nouveau diagramme de paquetage, avec en plus, la classe Admin dans model et la classe FrmAuthentification dans view :<br>
-![3-diagramme_de_paquetages_S4](https://github.com/CNED-SLAM/Habilitations/assets/100127886/9b086d26-df1a-488c-9c78-d7caa0464ca5)
+![img4](https://github.com/user-attachments/assets/9904d33a-8bbe-4703-85a5-57041db28c3a)
 
 ### Commit "Phase 4 : Installeur"
 Création d'un installeur pour l'application.
